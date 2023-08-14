@@ -16,7 +16,7 @@ public class Main {
         String output = (new Main()).readRawDataToString();
         System.out.println(output);
 
-        System.out.println(splitIntoTokens(output).size());
+        printTokens(splitIntoTokens(output));
 
     }
 
@@ -25,6 +25,17 @@ public class Main {
         StringTokenizer st = new StringTokenizer(input, "##");
         while (st.hasMoreTokens()){
         tokens.add(st.nextToken());}
-       return tokens;
+        return tokens;
+    }
+
+    public static void printTokens(List<String> list){
+        for(String s : list){
+            System.out.println(s);
+        }
+    }
+
+    public List<Item> stringToItemList(List<String> list){
+
+        return null;
     }
 }
