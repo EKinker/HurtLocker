@@ -54,4 +54,12 @@ public class Item {
 
         return input.substring(0,1).toUpperCase()+input.substring(1).toLowerCase();
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

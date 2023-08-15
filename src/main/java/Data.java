@@ -24,21 +24,17 @@ public class Data {
         return tokens;
     }
 
-
-    public void printTokens(List<String> list){
+    public void printTokens(List<String> list){  //for testing
         for(String s : list){
             System.out.println(s);
         }
     }
-
-
 
     public List<Item> createItemList(List<String> list){
         List<Item> result = new ArrayList<>();
         for(String s: list){
             result.add(new Item(s));
         }
-
         return result;
     }
 
