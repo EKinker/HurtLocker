@@ -34,4 +34,10 @@ public class DataTest extends TestCase {
 
     public void testIncrementItemCount() {
     }
+
+    public void testPopulateResults() {
+        List<Item> itemList = data.createItemList(tokens);
+        data.populateResults(itemList);
+
+    }
 }

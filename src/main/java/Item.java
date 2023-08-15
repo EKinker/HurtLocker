@@ -7,7 +7,7 @@ public class Item {
     private double price;
     private String type;
     private String expiration;
-    private boolean isValid;
+    private boolean isValid;  //I don't think I'll need this
 
     public Item(String input) {
         String regex = "[Nn]\\w{3}:(\\w*)\\S[Pp]\\w{4}:(\\d+.?\\d+)?\\S\\w+:(\\w+)\\S\\w+:(.*$)";
