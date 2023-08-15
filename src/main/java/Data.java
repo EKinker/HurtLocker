@@ -78,21 +78,19 @@ public class Data {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<String, Map<Double, Integer>> map : results.entrySet()) {
-            sb.append("Name: " + map.getKey() + "  Price: $");
+            String itemName = map.getKey();
+            sb.append("Name: " + itemName + "  Prices: $");
 
+            Map<Double, Integer> innerMap = map.getValue();
+            for (Map.Entry<Double, Integer> innerEntry : innerMap.entrySet()) {
+                Double price = innerEntry.getKey();
+                Integer count = innerEntry.getValue();
+                sb.append(price + " (Count: " + count + "), ");
+            }
+            sb.append("\n");
         }
+        sb.append("Errors: " + getErrorCount());
         return sb.toString();
-//        return "Data{" +
-//                "results=" + results +
-//                ", errorCount=" + errorCount +
-//                '}';
     }
-//    public Map<Double, Integer> incrementItemCount(Map<Double, Integer> map, Item item) {
-//        if (map.containsKey(item.getPrice())) {
-//            map.put(item.getPrice(), map.get(item.getPrice()) + 1);
-//        } else {
-//            map.put(item.getPrice(), 1);
-//        }
-//        return map;
-//    }
 }
+
