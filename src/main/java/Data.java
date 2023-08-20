@@ -42,9 +42,7 @@ public class Data {
     }
 
     public void populateResults(List<Item> items) {
-        for (Item i : items) {
-            addItem(i);
-        }
+        items.forEach(this::addItem);
     }
 
     public void addItem(Item item) {
