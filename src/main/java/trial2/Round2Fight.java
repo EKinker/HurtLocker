@@ -1,7 +1,6 @@
 package trial2;
 
 import org.apache.commons.io.IOUtils;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -58,12 +57,12 @@ public class Round2Fight {
             results.forEach((outerKey, innerMap) -> {
 
                 try {
-                    bw.write(String.format("Name: %-15s Seen: %3d times\n", outerKey, innerMap.values().stream()
+                    bw.write(String.format("Name: %-15s Seen: %d times\n", outerKey, innerMap.values().stream()
                             .mapToInt(Integer::intValue).sum()));
                     bw.write("=============\t\t =============\n");
                     innerMap.forEach((innerKey, count) -> {
                         try {
-                            bw.write(String.format("Price: %-14s Seen: %3d times\n", innerKey, count));
+                            bw.write(String.format("Price: %-14s Seen: %d times\n", innerKey, count));
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
@@ -73,7 +72,7 @@ public class Round2Fight {
                     throw new RuntimeException(e);
                 }
             });
-            bw.write(String.format("%-21s Seen: %3s times\n", "Errors", errorCounter));
+            bw.write(String.format("%-21s Seen: %s times\n", "Errors", errorCounter));
             bw.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
